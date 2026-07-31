@@ -3,175 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adriano Portugal | Links</title>
-  <!-- Ícones do FontAwesome -->
+  <title>Meu Cartão Digital</title>
+  <!-- FontAwesome para os ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    :root {
-      --bg-color: #000000;       /* Preto puro */
-      --card-bg: #141414;     /* Cinza bem escuro */
-      --card-hover: #222222;  /* Leve destaque ao passar o mouse */
-      --text-color: #ffffff;    /* Texto e ícones brancos */
-      --subtext-color: #a1a1aa; /* Cinza claro para a bio */
-      --border-color: #27272a;  /* Borda sutil */
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
+    /* Estilos gerais */
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 24px 16px;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
-    .container {
+    .card {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       width: 100%;
-      max-width: 380px;
+      max-width: 400px;
       text-align: center;
     }
 
-    .profile-img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      margin-bottom: 16px;
-      object-fit: cover;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
-    }
-
     h1 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-      letter-spacing: -0.01em;
+      margin-bottom: 5px;
+      color: #333;
     }
 
-    p {
-      font-size: 0.9rem;
-      color: var(--subtext-color);
-      margin-bottom: 28px;
+    p.subtitle {
+      color: #666;
+      margin-bottom: 25px;
     }
 
     .links-container {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 15px;
     }
 
     .link-card {
-      background-color: var(--card-bg);
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 16px 20px;
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.2s ease-in-out;
-      border: 1px solid var(--border-color);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-    }
-
-    .link-card i {
-      font-size: 1.1rem;
-      width: 20px;
-      text-align: center;
+      gap: 10px;
+      background-color: #0070f3;
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
     }
 
     .link-card:hover {
-      background-color: var(--card-hover);
-      border-color: #3f3f46;
-      transform: translateY(-1px);
+      background-color: #0051a2;
     }
 
-    .footer {
-      margin-top: 36px;
-      font-size: 0.75rem;
-      color: #52525b;
-    }
+    .link-card.whatsapp { background-color: #25D366; }
+    .link-card.instagram { background-color: #E1306C; }
+    .link-card.youtube { background-color: #FF0000; }
+    .link-card.tiktok { background-color: #000000; }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Sua Foto de Perfil -->
-    <img class="profile-img" src="foto.jpg" alt="Adriano Portugal">
-    
-    <!-- Nome e Bio -->
-    <h1>Adriano Portugal</h1>
-    <p>Informática e CFTV</p>
+  <div class="card">
+    <h1>Seu Nome Aqui</h1>
+    <p class="subtitle">Bem-vindo ao meu cartão digital!</p>
 
-    <!-- Links com URLs reais e funcionais -->
     <div class="links-container">
-  <a href="#" onclick="adicionarContato(event)" class="link-card">
-    <i class="fa-solid fa-address-book"></i> Me Adicione
-  </a>
+      <!-- Botão Me Adicione com clique tratado via JS -->
+      <a href="#" onclick="adicionarContato(event)" class="link-card">
+        <i class="fa-solid fa-address-book"></i> Me Adicione
+      </a>
 
-      <a href="https://wa.me/5521991642375" class="link-card" target="_blank">
+      <!-- Redes Sociais -->
+      <a href="https://wa.me/5521999999999" target="_blank" class="link-card whatsapp">
         <i class="fa-brands fa-whatsapp"></i> WhatsApp
       </a>
 
-      <a href="https://instagram.com/adrianoporfer" class="link-card" target="_blank">
+      <a href="https://instagram.com/seu_usuario" target="_blank" class="link-card instagram">
         <i class="fa-brands fa-instagram"></i> Instagram
       </a>
 
-      <a href="https://youtube.com/@adrianoportugal" class="link-card" target="_blank">
+      <a href="https://youtube.com/@seu_canal" target="_blank" class="link-card youtube">
         <i class="fa-brands fa-youtube"></i> YouTube
       </a>
 
-      <a href="https://tiktok.com/@adrianoportugal1" class="link-card" target="_blank">
+      <a href="https://tiktok.com/@seu_usuario" target="_blank" class="link-card tiktok">
         <i class="fa-brands fa-tiktok"></i> TikTok
       </a>
     </div>
-
-    <div class="footer">
-      © 2026 • Adriano Portugal
-    </div>
   </div>
-<script>
-function adicionarContato(event) {
-  event.preventDefault();
 
-  // 🔴 COLOQUE SEUS DADOS REAIS AQUI ABAIXO:
-  const dados = {
-    nome: "Adriano Portugal",
-    telefone: "+5521991642375",
-    email: "adrianoportugal@gmail.com",
-    empresa: "", // Pode deixar vazio "" se não quiser colocar empresa
-    vcfUrl: "contato.vcf"
-  };
+  <script>
+    function adicionarContato(event) {
+      event.preventDefault();
 
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  const isAndroid = /android/i.test(userAgent);
+      // ==========================================
+      // 🔴 PREENCHA COM SEUS DADOS REAIS ABAIXO:
+      // ==========================================
+      const dados = {
+        nome: "Seu Nome Completo",
+        telefone: "+5521999999999",
+        email: "seuemail@exemplo.com",
+        empresa: "", 
+        vcfUrl: "contato.vcf"
+      };
 
-  if (isAndroid) {
-    // No Android: Abre a agenda nativa direto preenchida sem baixar arquivo
-    const intentUrl = `intent:#Intent;action=android.intent.action.INSERT;` +
-                      `type=vnd.android.cursor.dir/contact;` +
-                      `S.name=${encodeURIComponent(dados.nome)};` +
-                      `S.phone=${encodeURIComponent(dados.telefone)};` +
-                      `S.email=${encodeURIComponent(dados.email)};` +
-                      `S.company=${encodeURIComponent(dados.empresa)};` +
-                      `end`;
-    
-    window.location.href = intentUrl;
-  } else {
-    // No iPhone (iOS): Abre a ficha de contato direto no Safari
-    window.location.href = dados.vcfUrl;
-  }
-}
-</script>  
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const isAndroid = /android/i.test(userAgent);
+
+      if (isAndroid) {
+        // No Android: Abre a agenda nativa direta com os dados preenchidos
+        const intentUrl = `intent:#Intent;action=android.intent.action.INSERT;` +
+                          `type=vnd.android.cursor.dir/contact;` +
+                          `S.name=${encodeURIComponent(dados.nome)};` +
+                          `S.phone=${encodeURIComponent(dados.telefone)};` +
+                          `S.email=${encodeURIComponent(dados.email)};` +
+                          `S.company=${encodeURIComponent(dados.empresa)};` +
+                          `end`;
+        
+        window.location.href = intentUrl;
+      } else {
+        // No iPhone (iOS): Redireciona para o arquivo .vcf
+        window.location.href = dados.vcfUrl;
+      }
+    }
+  </script>
+
 </body>
 </html>
