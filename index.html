@@ -82,7 +82,6 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      cursor: pointer;
     }
 
     .link-card i {
@@ -116,7 +115,8 @@
 
     <!-- Links do Menu -->
     <div class="links-container">
-      <a id="btnMeAdicione" href="contato.vcf" class="link-card">
+      <!-- Botão direto para baixar o arquivo .vcf -->
+      <a href="contato.vcf" class="link-card" download="Adriano_Portugal.vcf">
         <i class="fa-solid fa-address-book"></i> Me Adicione
       </a>
 
@@ -142,21 +142,5 @@
     </div>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const isAndroid = /android/i.test(navigator.userAgent || navigator.vendor || window.opera);
-      const btn = document.getElementById("btnMeAdicione");
-
-      if (isAndroid && btn) {
-        const nome = encodeURIComponent("Adriano Portugal");
-        const tel = encodeURIComponent("+5521991642375");
-        const empresa = encodeURIComponent("Informática e CFTV");
-
-        // Altera o link direto no Android para abrir a agenda sem baixar arquivo solto
-        btn.href = `intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/contact;S.name=${nome};S.phone=${tel};S.company=${empresa};end`;
-      }
-    });
-  </script>
-  
 </body>
 </html>
