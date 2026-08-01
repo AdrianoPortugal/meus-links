@@ -114,11 +114,11 @@
     <h1>Adriano Portugal</h1>
     <p>Informática e CFTV</p>
 
-    <!-- Links com URLs reais e funcionais -->
+    <!-- Links do Menu -->
     <div class="links-container">
-     <a id="btnMeAdicione" href="contato.vcf" class="link-card">
-  <i class="fa-solid fa-address-book"></i> Me Adicione
-</a>
+      <a id="btnMeAdicione" href="contato.vcf" class="link-card">
+        <i class="fa-solid fa-address-book"></i> Me Adicione
+      </a>
 
       <a href="https://wa.me/5521991642375" class="link-card" target="_blank">
         <i class="fa-brands fa-whatsapp"></i> WhatsApp
@@ -142,20 +142,21 @@
     </div>
   </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const isAndroid = /android/i.test(navigator.userAgent || navigator.vendor || window.opera);
-    const btn = document.getElementById("btnMeAdicione");
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const isAndroid = /android/i.test(navigator.userAgent || navigator.vendor || window.opera);
+      const btn = document.getElementById("btnMeAdicione");
 
-    if (isAndroid && btn) {
-      const nome = encodeURIComponent("Adriano Portugal");
-      const tel = encodeURIComponent("+5521991642375");
-      const empresa = encodeURIComponent("Informática e CFTV");
+      if (isAndroid && btn) {
+        const nome = encodeURIComponent("Adriano Portugal");
+        const tel = encodeURIComponent("+5521991642375");
+        const empresa = encodeURIComponent("Informática e CFTV");
 
-      // Modifica o link direto para o Android abrir a agenda nativa
-      btn.href = `intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/contact;S.name=${nome};S.phone=${tel};S.company=${empresa};end`;
-    }
-  });
-</script>  
+        // Altera o link direto no Android para abrir a agenda sem baixar arquivo solto
+        btn.href = `intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/contact;S.name=${nome};S.phone=${tel};S.company=${empresa};end`;
+      }
+    });
+  </script>
+  
 </body>
 </html>
