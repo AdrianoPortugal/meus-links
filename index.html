@@ -140,6 +140,36 @@
       © 2026 • Adriano Portugal
     </div>
   </div>
+<script>
+function adicionarContato(event) {
+  event.preventDefault();
 
+  const dados = {
+    nome: "Seu Nome Completo",
+    telefone: "+5521999999999",
+    email: "seuemail@exemplo.com",
+    empresa: "", 
+    vcfUrl: "contato.vcf"
+  };
+
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+  const isAndroid = /android/i.test(userAgent);
+
+  if (isAndroid) {
+    const intentUrl = `intent:#Intent;action=android.intent.action.INSERT;` +
+                      `type=vnd.android.cursor.dir/contact;` +
+                      `S.name=${encodeURIComponent(dados.nome)};` +
+                      `S.phone=${encodeURIComponent(dados.telefone)};` +
+                      `S.email=${encodeURIComponent(dados.email)};` +
+                      `S.company=${encodeURIComponent(dados.empresa)};` +
+                      `end`;
+    
+    window.location.href = intentUrl;
+  } else {
+    window.location.href = dados.vcfUrl;
+  }
+}
+</script>
+  
 </body>
 </html>
