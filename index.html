@@ -143,35 +143,19 @@
   </div>
 
 <script>
-function adicionarContato(event) {
-  event.preventDefault();
+  document.addEventListener("DOMContentLoaded", function() {
+    const isAndroid = /android/i.test(navigator.userAgent || navigator.vendor || window.opera);
+    const btn = document.getElementById("btnMeAdicione");
 
-  const dados = {
-    nome: "Adriano Portugal",
-    telefone: "+5521991642375",
-    empresa: "Informática e CFTV",
-    vcfUrl: "contato.vcf"
-  };
+    if (isAndroid && btn) {
+      const nome = encodeURIComponent("Adriano Portugal");
+      const tel = encodeURIComponent("+5521991642375");
+      const empresa = encodeURIComponent("Informática e CFTV");
 
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-  const isAndroid = /android/i.test(userAgent);
-
-  if (isAndroid) {
-    // Tenta abrir a Intent nativa do Android preenchida
-    const intentUrl = `intent:#Intent;action=android.intent.action.INSERT;` +
-                      `type=vnd.android.cursor.dir/contact;` +
-                      `S.name=${encodeURIComponent(dados.nome)};` +
-                      `S.phone=${encodeURIComponent(dados.telefone)};` +
-                      `S.company=${encodeURIComponent(dados.empresa)};` +
-                      `end`;
-    
-    window.location.href = intentUrl;
-  } else {
-    // Redireciona para o arquivo .vcf (para iPhone / iOS)
-    window.location.href = dados.vcfUrl;
-  }
-}
-</script>
-  
+      // Modifica o link direto para o Android abrir a agenda nativa
+      btn.href = `intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/contact;S.name=${nome};S.phone=${tel};S.company=${empresa};end`;
+    }
+  });
+</script>  
 </body>
 </html>
